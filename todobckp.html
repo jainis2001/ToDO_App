@@ -1,0 +1,95 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Document</title>
+
+    <style>
+        #edit{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form method="post">
+        <input id="input-text" type="text" name="text" required>
+        <input id="add" type="button" value="Add" onclick="addData()">
+        <input id="edit" type="button" value="Update" onclick="editData()">
+    </form>
+    <!-- <div id="showData">
+    </div> -->
+    <span id="error"></span>
+    <table id="showData">
+       
+    </tavle>
+</body>
+<script>
+   
+    const tableTag=document.querySelector('table');
+    var editId;
+
+    list=[];
+    
+
+    function addData(){
+        value=document.getElementById("input-text").value;
+        if(value){
+            console.log("called")
+            templist={}
+            templist.data=document.getElementById("input-text").value;
+
+            list.push(templist);
+            console.log(list);
+            trElement=document.createElement('tr');
+            td_data=document.createElement('td');
+            td_edit=document.createElement('td');
+            td_delete=document.createElement('td');
+            let dataId=list.length-1;
+            td_data.textContent=list[dataId].data;
+            td_edit.innerHTML="<input type='button' value='edit' onclick='findId("+dataId+")'>";
+            td_delete.innerHTML="<input type='button' value='delete' onclick='deleteData("+dataId+")'>";
+            trElement.appendChild(td_data);
+            trElement.appendChild(td_edit);
+            trElement.appendChild(td_delete);
+            tableTag.appendChild(trElement);
+            document.getElementById("input-text").value=null;
+        
+
+        }
+        else{
+            document.getElementById("error").textContent="Enter Value";
+            $("#error").show("slow").delay(1000).hide("slow");
+            
+        }
+        
+
+    }
+    function findId(id){
+        document.getElementById("add").style.display="none";
+        document.getElementById("edit").style.display="inline";
+        editId=id;
+        document.getElementById("input-text").value=list[id].data;
+
+    }
+    function editData(){
+        console.log("edit_id "+editId);
+        list[editId].data=document.getElementById("input-text").value;
+        document.querySelectorAll("tr")[editId].firstElementChild.textContent=list[editId].data;
+        document.getElementById("edit").style.display="none";
+        document.getElementById("add").style.display="inline";
+        document.getElementById("input-text").value=null;
+
+    }
+    function deleteData(id){
+        document.querySelectorAll("tr")[id].remove();
+        list.pop(editId);
+
+    }
+    
+
+
+</script>
+</html>

@@ -1,0 +1,77 @@
+h1{
+    color: rgb(88, 35, 212);
+}
+input[type=text]{
+    height:40px;
+    width: 400px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+input[value=Edit]{
+    background-color: rgb(75, 172, 71);
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+input[value=Edit]:hover{
+    box-shadow: 2px 5px 8px rgb(74 116 72);
+ }
+input[value=Delete]{
+    background-color: rgb(172, 56, 56);
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+
+}
+input[value=Delete]:hover{
+    box-shadow: 2px 5px 8px rgb(129, 62, 62);
+ }
+td{
+    font-size: 20px;
+}
+#update{
+    display: none;
+    background-color: rgb(75, 172, 71);
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+}
+#update:hover{
+    box-shadow: 3px 3px 12px rgb(75, 172, 71);
+ }
+#add{
+    background-color: rgb(88, 35, 212);
+    height: 40px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+
+}
+#add:hover{
+   box-shadow: 3px 3px 12px rgb(88, 35, 212);
+}
+#deleteall{
+    display: none;
+    background-color: rgb(172, 56, 56);
+    height: 40px;
+    width: 75px;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+ }
+ #deleteall:hover{
+    background-color: rgb(172, 56, 56);
+ }
